@@ -84,5 +84,5 @@ public enum Column {
     /// The explicit copy-on-write value-semantic column over the heap backing.
     /// Value-semantic payloads (stored properties, enum payloads) take this
     /// column; direct columns make the enclosing type move-only.
-    public typealias Shared<E> = Shared_Primitive.Shared<E, Heap<E>>
+    public typealias Shared<E: ~Copyable> = Shared_Primitive.Shared<E, Heap<E>>
 }
