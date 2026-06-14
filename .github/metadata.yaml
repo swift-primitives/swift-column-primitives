@@ -1,0 +1,8 @@
+# .github/metadata.yaml
+description: "Canonical storage-column compositions — named typealiases (Column.Heap, Column.Bounded, …) over Buffer × Storage × Memory; the ready-made columns the ADTs build on."
+topics:
+  - primitives
+  - column
+homepage: "https://swift-institute.org"
+readme:
+  family: E
