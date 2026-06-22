@@ -27,7 +27,7 @@ public import Memory_Allocator_Pool_Primitives
 /// resource-true members) — generic typealiases for the tower's full column
 /// spellings, so consumer signatures read
 /// `Array<Column.Heap<Int>>` instead of
-/// `Array<Buffer<Storage<Memory.Allocator<Memory.Heap>.System>.Contiguous<Int>>.Linear>`.
+/// `Array<Buffer<Storage<Memory.Allocator<Memory.Heap>>.Contiguous<Int>>.Linear>`.
 ///
 /// ## Pure typealiases, zero re-exports
 ///
@@ -60,17 +60,17 @@ public enum Column {
     /// The growable heap column — `Buffer.Linear` over system-allocated
     /// contiguous storage.
     public typealias Heap<E: ~Copyable> =
-        Buffer<Storage<Memory.Allocator<Memory.Heap>.System>.Contiguous<E>>.Linear
+        Buffer<Storage<Memory.Allocator<Memory.Heap>>.Contiguous<E>>.Linear
 
     /// The fixed-capacity linear column — `Buffer.Linear.Bounded` (rejects on
     /// overflow with typed throws at the family surface).
     public typealias Bounded<E: ~Copyable> =
-        Buffer<Storage<Memory.Allocator<Memory.Heap>.System>.Contiguous<E>>.Linear.Bounded
+        Buffer<Storage<Memory.Allocator<Memory.Heap>>.Contiguous<E>>.Linear.Bounded
 
     /// The growable cyclic column — `Buffer.Ring`. The bounded ring is
     /// `Column.Ring<E>.Bounded` (the nesting chains through the alias).
     public typealias Ring<E: ~Copyable> =
-        Buffer<Storage<Memory.Allocator<Memory.Heap>.System>.Contiguous<E>>.Ring
+        Buffer<Storage<Memory.Allocator<Memory.Heap>>.Contiguous<E>>.Ring
 
     /// The typed inline column — `Store.Inline<E, n>`: elements live in the
     /// value itself (no allocation), capacity in the type.
