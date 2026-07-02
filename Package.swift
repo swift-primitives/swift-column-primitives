@@ -40,6 +40,7 @@ let package = Package(
                 .product(name: "Buffer Ring Primitive", package: "swift-buffer-ring-primitives"),
                 .product(name: "Storage Primitive", package: "swift-storage-primitives"),
                 .product(name: "Storage Contiguous Primitives", package: "swift-storage-primitives"),
+                .product(name: "Store Protocol Primitives", package: "swift-storage-primitives"),
                 .product(name: "Store Inline Primitives", package: "swift-storage-primitives"),
                 .product(name: "Storage Generational Primitives", package: "swift-storage-generational-primitives"),
                 .product(name: "Shared Primitive", package: "swift-shared-primitives"),
