@@ -17,7 +17,7 @@ public import Storage_Primitive
 public import Storage_Contiguous_Primitives
 public import Store_Inline_Primitives
 public import Storage_Generational_Primitives
-public import Shared_Primitive
+public import Ownership_Shared_Primitive
 public import Memory_Primitive
 public import Memory_Allocator_Primitive
 public import Memory_Heap_Primitives
@@ -51,7 +51,7 @@ public import Memory_Allocator_Pool_Primitives
 /// - ``Generational`` — the sparse handle-validated column over the heap pool
 ///   (`Storage.Generational`).
 /// - ``Shared`` — the explicit copy-on-write value-semantic column over the
-///   heap backing (`Shared<E, Column.Heap<E>>`); value-semantic payloads take
+///   heap backing (`Ownership.Shared<E, Column.Heap<E>>`); value-semantic payloads take
 ///   this column (the B-class guidance).
 ///
 /// New members land with their families (e.g. `Small` rides the deferred Q2
@@ -84,5 +84,5 @@ public enum Column {
     /// The explicit copy-on-write value-semantic column over the heap backing.
     /// Value-semantic payloads (stored properties, enum payloads) take this
     /// column; direct columns make the enclosing type move-only.
-    public typealias Shared<E: ~Copyable> = Shared_Primitive.Shared<E, Heap<E>>
+    public typealias Shared<E: ~Copyable> = Ownership.Shared<E, Heap<E>>
 }

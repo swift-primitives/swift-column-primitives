@@ -23,7 +23,7 @@ import Buffer_Ring_Primitive
 import Buffer_Ring_Bounded_Primitive
 import Store_Inline_Primitives
 import Storage_Generational_Primitives
-import Shared_Primitive
+import Ownership_Shared_Primitive
 import Index_Primitives
 import Tagged_Primitives_Standard_Library_Integration
 
