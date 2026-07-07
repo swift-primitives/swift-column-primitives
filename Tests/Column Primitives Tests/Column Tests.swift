@@ -15,17 +15,17 @@
 // the explicitly-imported column modules (Audit-#9 — the vocabulary re-exports
 // nothing).
 
-import Testing
-import Column_Primitives
-import Buffer_Linear_Primitive
 import Buffer_Linear_Bounded_Primitive
-import Buffer_Ring_Primitive
+import Buffer_Linear_Primitive
 import Buffer_Ring_Bounded_Primitive
-import Store_Inline_Primitives
-import Storage_Generational_Primitives
-import Ownership_Shared_Primitive
+import Buffer_Ring_Primitive
+import Column_Primitives
 import Index_Primitives
+import Ownership_Shared_Primitive
+import Storage_Generational_Primitives
+import Store_Inline_Primitives
 import Tagged_Primitives_Standard_Library_Integration
+import Testing
 
 private struct MoveOnly: ~Copyable { var v: Int }
 

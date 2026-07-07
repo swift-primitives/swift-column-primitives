@@ -9,19 +9,19 @@
 //
 // ===----------------------------------------------------------------------===//
 
-public import Buffer_Primitive
-public import Buffer_Linear_Primitive
 public import Buffer_Linear_Bounded_Primitive
+public import Buffer_Linear_Primitive
+public import Buffer_Primitive
 public import Buffer_Ring_Primitive
-public import Storage_Primitive
-public import Storage_Contiguous_Primitives
-public import Store_Inline_Primitives
-public import Storage_Generational_Primitives
-public import Ownership_Shared_Primitive
-public import Memory_Primitive
+public import Memory_Allocator_Pool_Primitives
 public import Memory_Allocator_Primitive
 public import Memory_Heap_Primitives
-public import Memory_Allocator_Pool_Primitives
+public import Memory_Primitive
+public import Ownership_Shared_Primitive
+public import Storage_Contiguous_Primitives
+public import Storage_Generational_Primitives
+public import Storage_Primitive
+public import Store_Inline_Primitives
 
 /// The COLUMN VOCABULARY (principal-ruled 2026-06-10: namespace `Column`,
 /// resource-true members) — generic typealiases for the tower's full column
@@ -67,8 +67,10 @@ public enum Column {
     public typealias Bounded<E: ~Copyable> =
         Buffer<Storage<Memory.Allocator<Memory.Heap>>.Contiguous<E>>.Linear.Bounded
 
-    /// The growable cyclic column — `Buffer.Ring`. The bounded ring is
-    /// `Column.Ring<E>.Bounded` (the nesting chains through the alias).
+    /// The growable cyclic column — `Buffer.Ring`.
+    ///
+    /// The bounded ring is `Column.Ring<E>.Bounded` (the nesting chains
+    /// through the alias).
     public typealias Ring<E: ~Copyable> =
         Buffer<Storage<Memory.Allocator<Memory.Heap>>.Contiguous<E>>.Ring
 
@@ -82,6 +84,7 @@ public enum Column {
         Storage<Memory.Allocator<Memory.Heap>.Pool>.Generational<E>
 
     /// The explicit copy-on-write value-semantic column over the heap backing.
+    ///
     /// Value-semantic payloads (stored properties, enum payloads) take this
     /// column; direct columns make the enclosing type move-only.
     public typealias Shared<E: ~Copyable> = Ownership.Shared<E, Heap<E>>
