@@ -56,7 +56,9 @@ public import Store_Inline_Primitives
 ///
 /// New members land with their families (e.g. `Small` rides the deferred Q2
 /// `Store.Small`).
-public enum Column {
+public enum Column {}
+
+extension Column {
     /// The growable heap column — `Buffer.Linear` over system-allocated
     /// contiguous storage.
     public typealias Heap<E: ~Copyable> =
